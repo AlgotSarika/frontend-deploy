@@ -31,7 +31,7 @@ pipeline {
             
             steps {
                 script{
-                    withAWS(region: 'us-east-1', credentials: 'aws-creds-dev') {
+                    withAWS(region: 'us-east-1', credentials: 'aws-creds') {
                         sh """
                             aws eks update-kubeconfig --region $REGION --name expense-dev
                             kubectl get nodes
